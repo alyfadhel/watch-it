@@ -1,5 +1,3 @@
-
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:watch_it/core/error/exception.dart';
