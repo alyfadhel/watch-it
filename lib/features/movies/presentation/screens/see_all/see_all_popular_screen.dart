@@ -23,12 +23,24 @@ class SeeAllPopularScreen extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           var cubit = MoviesCubit.get(context);
-          if(state is GetPopularMoviesLoadingState){
-            return const Center(child: CircularProgressIndicator(),);
-          }
-          else if(state is GetPopularMoviesSuccessState){
+          if (state is GetPopularMoviesLoadingState) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is GetPopularMoviesSuccessState) {
             return Scaffold(
+              backgroundColor: ColorManager.sBlack,
               appBar: AppBar(
+                backgroundColor: ColorManager.sBlack,
+                leading: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: ColorManager.sWhite,
+                  ),
+                ),
                 elevation: AppSize.s0,
                 title: Text(
                   AppStrings.popular,
@@ -48,7 +60,7 @@ class SeeAllPopularScreen extends StatelessWidget {
                   cubit.isLoadMore
                       ? cubit.results.length + 2
                       : cubit.results.length,
-                      (index) {
+                  (index) {
                     if (index >= cubit.results.length) {
                       return const Center(
                         child: CircularProgressIndicator(
@@ -57,14 +69,14 @@ class SeeAllPopularScreen extends StatelessWidget {
                       );
                     } else {
                       return BuildSeeAllPopular(
-                       model: cubit.results[index],
+                        model: cubit.results[index],
                       );
                     }
                   },
                 ),
               ),
             );
-          }else{
+          } else {
             return Container();
           }
         },
@@ -72,5 +84,3 @@ class SeeAllPopularScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,13 +1,12 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watch_it/core/resources/color_manager.dart';
 import 'package:watch_it/core/resources/values_manager.dart';
 import 'package:watch_it/core/service/service_locator.dart';
 import 'package:watch_it/features/movies/presentation/controller/cubit/movies_cubit.dart';
 import 'package:watch_it/features/movies/presentation/controller/cubit/movise_state.dart';
 import 'package:watch_it/features/movies/presentation/widgets/popular_details/build_movies_popular_details.dart';
-
-
 
 class ShowPopularDetailsScreen extends StatelessWidget {
   final int id;
@@ -18,21 +17,29 @@ class ShowPopularDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) =>
-      sl<MoviesCubit>()
+      create: (BuildContext context) => sl<MoviesCubit>()
         ..getMoviesPopularDetails(id: id)
         ..getCreditCast(id: id)
         ..getSimilarMovies(id: id)
         ..getTrailerMovies(id: id),
       child: BlocConsumer<MoviesCubit, MoviesState>(
-        listener: (context, state) {
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           var cubit = MoviesCubit.get(context);
           return Scaffold(
+            backgroundColor: Colors.black.withOpacity(.6),
             appBar: AppBar(
               backgroundColor: Colors.black.withOpacity(.6),
               elevation: AppSize.s10,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: ColorManager.sWhite,
+                ),
+              ),
             ),
             extendBodyBehindAppBar: true,
             extendBody: true,
@@ -40,8 +47,7 @@ class ShowPopularDetailsScreen extends StatelessWidget {
               condition: cubit.moviesDetails != null,
               builder: (context) =>
                   BuildMoviesPopularDetails(model: cubit.moviesDetails!),
-              fallback: (context) =>
-              const Center(
+              fallback: (context) => const Center(
                 child: CircularProgressIndicator(),
               ),
             ),

@@ -14,5 +14,6 @@ String creditsPath(int id) => '$baseApiUrl/movie/$id/credits?api_key=$apiKey';
 String similarMoviesPath(int id) => '$baseApiUrl/movie/$id/similar?api_key=$apiKey';
 String trailerMoviesPath(int id) => '$baseApiUrl/movie/$id/videos?api_key=$apiKey';
 
+String? token = '';
 
 

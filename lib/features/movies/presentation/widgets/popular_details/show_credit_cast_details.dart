@@ -51,7 +51,9 @@ class ShowCreditCast extends StatelessWidget {
           child: Text(
             model.name,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: ColorManager.sWhite,
+            ),
           ),
         ),
         SizedBox(

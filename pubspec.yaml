@@ -46,6 +46,7 @@ dependencies:
   conditional_builder_null_safety: ^0.0.6
   youtube_player_flutter: ^8.1.2
   flutter_launcher_icons: ^0.13.1
+  shared_preferences: ^2.2.3
 
 flutter_icons:
   ios: true

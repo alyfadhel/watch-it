@@ -29,7 +29,18 @@ class SeeAllTopRatedScreen extends StatelessWidget {
           }
           else if(state is GetMoviesTopRatedSuccessState){
             return Scaffold(
+              backgroundColor: ColorManager.sBlack,
               appBar: AppBar(
+                backgroundColor: ColorManager.sBlack,
+                leading: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: ColorManager.sWhite,
+                  ),
+                ),
                 elevation: AppSize.s0,
                 title: Text(
                   AppStrings.topRated,

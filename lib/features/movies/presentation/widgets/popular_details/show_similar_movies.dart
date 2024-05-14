@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:watch_it/core/network/end_points.dart';
 import 'package:watch_it/core/resources/assets_manager.dart';
+import 'package:watch_it/core/resources/color_manager.dart';
 import 'package:watch_it/core/resources/values_manager.dart';
 import 'package:watch_it/features/movies/domain/entities/simailr_movies.dart';
 
@@ -52,7 +53,9 @@ class ShowSimilarMovies extends StatelessWidget {
             child: Text(
               model.title,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  color: ColorManager.sWhite
+              ),
             ),
           ),
         ],
