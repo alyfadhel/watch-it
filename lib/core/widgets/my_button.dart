@@ -14,7 +14,7 @@ class MyButton extends StatelessWidget {
     Key? key,
     this.width = double.infinity,
     this.background = ColorManager.red,
-    this.radius = 20.0,
+    this.radius = 10.0,
     required this.onPressedTextButton,
     required this.text,
     this.isUpperCase = true,

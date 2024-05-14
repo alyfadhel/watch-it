@@ -7,7 +7,7 @@ import 'package:watch_it/core/service/service_locator.dart';
 import 'package:watch_it/features/movies/presentation/controller/cubit/movies_cubit.dart';
 import 'package:watch_it/features/movies/presentation/controller/cubit/movise_state.dart';
 import 'package:watch_it/features/movies/presentation/screens/movies.dart';
-import 'package:watch_it/features/user/login/login_screen.dart';
+import 'package:watch_it/features/user/login/screens/login_screen.dart';
 import 'package:watch_it/features/user/network/local/cache_helper.dart';
 import 'package:watch_it/features/user/network/remote/dio_helper.dart';
 
