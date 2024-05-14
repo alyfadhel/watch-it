@@ -13,7 +13,7 @@ class MyButton extends StatelessWidget {
   const MyButton({
     Key? key,
     this.width = double.infinity,
-    this.background = ColorManager.bTwitter,
+    this.background = ColorManager.red,
     this.radius = 20.0,
     required this.onPressedTextButton,
     required this.text,

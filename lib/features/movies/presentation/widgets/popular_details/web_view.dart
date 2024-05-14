@@ -26,9 +26,7 @@ class WebViewScreen extends StatelessWidget {
       body: YoutubePlayer(
         controller: YoutubePlayerController(initialVideoId: id),
         showVideoProgressIndicator: true,
-
       ),
-
     );
   }
 }
