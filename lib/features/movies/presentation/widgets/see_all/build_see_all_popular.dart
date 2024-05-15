@@ -61,7 +61,7 @@ class BuildSeeAllPopular extends StatelessWidget {
               model.originalTitle,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
-              maxLines: 2,
+              maxLines: 1,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: ColorManager.sWhite, fontWeight: FontWeight.bold),
             ),

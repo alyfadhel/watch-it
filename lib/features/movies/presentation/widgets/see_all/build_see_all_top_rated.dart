@@ -59,7 +59,7 @@ class BuildSeeAllTopRated extends StatelessWidget {
             Text(
               model.originalTitle,
               overflow: TextOverflow.ellipsis,
-              maxLines: 2,
+              maxLines: 1,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: ColorManager.sWhite, fontWeight: FontWeight.bold),
